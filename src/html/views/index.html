@@ -2,9 +2,8 @@
   title: "Заголовок | Проект",
   author: "Harrix"
 }; %>
-<%= require('../includes/header.html') %>
+<%= _.template(require('../includes/head.html'))(data) %>
 
 <p>text</p>
 
-</body>
-</html>
+<%= require('../includes/footer.html')%>
