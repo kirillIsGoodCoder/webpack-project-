@@ -1,9 +1,7 @@
-<% var data = {
-  title: "Заголовок | Проект",
-  author: "Harrix"
-}; %>
-<%= _.template(require('../includes/head.html'))(data) %>
+<%= _.template(require('./../includes/head.html'))() %>
 
-<p></p>
+<div class="d-flex align-items center">
+  <%= _.template(require('./../components/card.html'))() %>
+</div>
 
-<%= require('../includes/footer.html')%>
+<%= _.template(require('./../includes/footer.html'))() %>
