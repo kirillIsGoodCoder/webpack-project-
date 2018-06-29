@@ -1,0 +1,35 @@
+.card {
+    margin : 30px auto auto 50px;
+    width: 240px;
+    height: 320px;
+    border :2px solid rgba(94, 27, 94, 0.452);
+    border-radius: 15px;
+    overflow: hidden;
+}
+.card:hover{
+    border :2px solid silver;
+    .description{
+        transform:translateY(38px);
+    }
+}
+.card-wrapper {
+    min-height: 100%;
+    background: rgba(0, 0, 0, 0.3) url('../img/1.png') center center no-repeat;
+    position: relative;
+}
+.description {
+    color:rgb(139, 36, 13);
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    padding-top: 10px;
+    padding-left: 15px;
+    transition: transform, 0.5s ease;
+}
+.description .title{
+    font-size: 18px;
+}
+.description .text {
+    font-size: 12px;
+    padding-bottom:10px;
+}

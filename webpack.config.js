@@ -76,7 +76,7 @@ module.exports = {
         to: './favicon'
       },
       {
-        from: './src/img',
+        from: './src/image',
         to: './img'
       },
       {
