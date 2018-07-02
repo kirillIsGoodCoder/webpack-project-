@@ -1,5 +1,5 @@
 body{
-    perspective: 300px;
+    perspective: 800px;
     perspective-origin: 50% 50%;
 }
 .card {
@@ -10,12 +10,13 @@ body{
     border-radius: 15px;
     overflow: hidden;
     transform: none;
+    transition: .5s;
 }
 .card:hover{
     border :2px solid silver;
-    transform:translateX(50deg);
+    transition: 5s;
     .description{
-        transform:translateY(38px);
+        transform:translateY(0px);
     }
 }
 .card-wrapper {
@@ -32,6 +33,7 @@ body{
     padding-top: 10px;
     padding-left: 15px;
     transition: transform, 0.5s ease;
+    transform:translateY(38px);
 }
 .description .title{
     font-size: 18px;
