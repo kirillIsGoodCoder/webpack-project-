@@ -1,3 +1,7 @@
+body{
+    perspective: 300px;
+    perspective-origin: 50% 50%;
+}
 .card {
     margin : 30px auto auto 50px;
     width: 240px;
@@ -5,9 +9,11 @@
     border :2px solid rgba(94, 27, 94, 0.452);
     border-radius: 15px;
     overflow: hidden;
+    transform: none;
 }
 .card:hover{
     border :2px solid silver;
+    transform:translateX(50deg);
     .description{
         transform:translateY(38px);
     }
@@ -16,6 +22,7 @@
     min-height: 100%;
     background: rgba(0, 0, 0, 0.3) url('../img/1.png') center center no-repeat;
     position: relative;
+    transform-style: flat;
 }
 .description {
     color:rgb(139, 36, 13);
