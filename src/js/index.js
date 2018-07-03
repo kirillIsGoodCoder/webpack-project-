@@ -8,40 +8,92 @@ for ( i=0; i < cardsElem.length; i++ ){
 function handler( event ) {
   var type = event.type; 
   var target = event.target;
-  var trDeg = 0,
-      leftSide = false,
-      rightSide = false;
+  var leftSide = false,
+      rightSide = false,
+      topSide = false,
+      bottomSide = false;
+console.log('targetCoords')
+console.log(target.getBoundingClientRect());
+  if (type === 'mouseout') {
+    var that = this;
+    setTimeout(function () {  
+      that.style.transform = "rotateY(0deg)";
+    }, 2000);
 
   if (type === 'mouseout') {
-    target.style.transform = "rotate3d(0, 1, 0, 0deg)";
-    target.style.transition = '0s';
+    var that = this;
+    setTimeout(function () {  
+      that.style.transform = "rotateX(0deg)";
+    }, 2000);
   }
+
   if (type === 'mousemove') {
-    var targetCoords = target.getBoundingClientRect();
-    var posX = event.clientX - targetCoords.x,
-        posY = event.clientY - targetCoords.y;
+    var targetCoords = this.getBoundingClientRect();// targetCoords.height - высота.
+                                                      // targetCoords.width - ширина.
+    var posX = event.clientX,
+        posY = event.clientY;
     console.log(posX, posY);
 
-    var center = targetCoords.x + 120;
-    if (posX < center) {
+    var centerX = targetCoords.width / 2;
+    var centerY = targetCoords.height / 2;
+    if (posX < centerX) {
       leftSide = true; 
     } else {
       rightSide = true;
     }
+
+    if (posY < centerY) {
+      topSide = true; 
+    } else {
+      bottomSide = true;
+    }
     
-    if ( posX < 50 ){
-      trDeg = posX / 2.5;
-    } else { 
-        trDeg = 27;
-      };
+    console.log(posX > 30 && posX < centerX);
+    console.log(posX > centerX && posX < (this.offsetWidth - 30));
+    if (posX < 30 && posX < centerX){   // ( posX > targetCoords.width - 50)
+      trDeg = posX;
+    } else {
+        trDeg = 30;
+      }
+
+    if ( posX < this.offsetWidth && posX > (this.offsetWidth - 30)) {
+      trDeg = posX;
+    } else {
+      trdeg = 30;
+    }
 
     if ( leftSide ){
       var lTrDeg = trDeg;
-      target.style.transform = "rotate3d(0, 1, 0, -"+lTrDeg+"deg)";
+      this.style.transform = "rotateY(-"+lTrDeg+"deg)";
     }
-    if ( rightSide && trDeg > 190){
+    if ( rightSide){
       var rTrDeg = trDeg;
-      target.style.transform = "rotate3d(0, 1, 0, "+rTrDeg+"deg)";
+      this.style.transform = "rotateY("+rTrDeg+"deg)";
     }
+        //  для У.
+
+    console.log(posY > 50 && posY < centerY); // верхний край 
+    console.log( posY < this.offsetHeigth && posY > (this.offsetHeight - 50));
+    if (posY < 50 && posY < centerY){   // ( posX > targetCoords.width - 50)
+      trDeg = posY;
+    } else {
+        trDeg = 50;
+      }
+
+    if (posY < this.offsetHeigth && posY > (this.offsetHeight - 50)) {
+      trDeg = posY;
+    } else {
+      trdeg = 50;
+    }
+
+    if ( topSide ){
+      var topTrDeg = trDeg;
+      this.style.transform = "rotateX(-"+topTrDeg+"deg)";
+    }
+    if ( bottomSide){
+      var bottomTrDeg = trDeg;
+      this.style.transform = "rotateX("+bottomTrDeg+"deg)";
+    }
+
   }
 }
