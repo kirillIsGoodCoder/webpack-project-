@@ -1,6 +1,8 @@
 body{
+}
+
+.card-el {
     perspective: 800px;
-    perspective-origin: 50% 50%;
 }
 .card {
     margin : 30px auto auto 50px;
@@ -10,11 +12,11 @@ body{
     border-radius: 15px;
     overflow: hidden;
     transform: none;
-    transition: .1s ease;
+    transition: 2s ease;
 }
 .card:hover{
+    transition: .1s ease;
     border :2px solid silver;
-    transition: 5s;
     .description{
         transform:translateY(0px);
     }
