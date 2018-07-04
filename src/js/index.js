@@ -18,10 +18,14 @@ function handler( event ) {
   }
 
   if (type === 'mousemove') {
-    var posX = event.clientX,
-        posY = event.clientY,
-        mouseX = posX > (targetCoords.width / 2) ? (posX / targetCoords.width) * 30 : (posX / (targetCoords.width / 2)) * -30,
-        mouseY = posY > (targetCoords.height / 2) ? (posY / targetCoords.height) * -30 : (posY / (targetCoords.height / 2)) * 30;
+    var posX = event.pageX - targetCoords.x,
+        posY = event.pageY - targetCoords.y,
+        mouseX = posX > (targetCoords.width / 2) 
+        ? (posX / targetCoords.width) * 30 
+        : (posX - (targetCoords.width / 2)) / (targetCoords.width / 2) * 30,
+        mouseY = posY > (targetCoords.height / 2) 
+        ? (posY / targetCoords.height) * -30 
+        : (posY - (targetCoords.height / 2)) / (targetCoords.height / 2) * -30;
 
     // var centerX = targetCoords.width / 2;
     // var centerY = targetCoords.height / 2;

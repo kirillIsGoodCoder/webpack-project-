@@ -3,6 +3,7 @@ body{
 
 .card-el {
     perspective: 800px;
+    position: relative;
 }
 .card {
     margin : 30px auto auto 50px;
@@ -17,18 +18,19 @@ body{
 .card:hover{
     transition: .1s ease;
     border :2px solid silver;
-    .description{
+    .card-description{
         transform:translateY(0px);
     }
 }
 .card-wrapper {
     min-height: 100%;
-    background: rgba(0, 0, 0, 0.3) url('../img/1.png') center center no-repeat;
+    background-position: center center;
+    background-size: cover;
     position: relative;
     transform-style: flat;
 }
-.description {
-    color:rgb(139, 36, 13);
+
+.card-description {
     position: absolute;
     left: 0px;
     bottom: 0px;
@@ -37,10 +39,16 @@ body{
     transition: transform, 0.5s ease;
     transform:translateY(38px);
 }
-.description .title{
+.card-description_color-brown {
+    color:rgb(139, 36, 13);
+}
+.card-description_color-blue {
+    color: rgb(96, 149, 228)
+}
+.card-description .title{
     font-size: 18px;
 }
-.description .text {
+.card-description .text {
     font-size: 12px;
     padding-bottom:10px;
 }
