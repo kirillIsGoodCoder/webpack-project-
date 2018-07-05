@@ -1,15 +1,24 @@
 $font-stack: -apple-system, BlinkMacSystemFont,Roboto,'Open Sans','Helvetica Neue',sans-serif;
-
-@import "~bootstrap/scss/bootstrap-grid";
-
-@import "card";
-
 @font-face {
-  font-family: 'Roboto';
+  font-family: 'Font Awesome 5 Free';
   font-style: normal;
   font-weight: 400;
-  src: url(../fonts/Roboto-Regular.ttf);
+  src: url('../fonts/fa-regular-400.eot');
+  src: url('../fonts/fa-regular-400.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/fa-regular-400.woff2') format('woff2'),
+  url('../fonts/fa-regular-400.woff') format('woff'),
+  url('../fonts/fa-regular-400.ttf') format('truetype'),
+  url('../fonts/fa-regular-400.svg#fontawesome') format('svg');
 }
+
+.fa, .far {
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 400;
+}
+
+@import "~bootstrap/scss/bootstrap-grid";
+@import "./font-awesome/fontawesome";
+@import "card";
 
 // Basic reset
 * {
@@ -23,7 +32,7 @@ html, body {
 }
 
 body {
-  background: #fff;
+  background: #fff !important;
   background-image: linear-gradient( to left top,red, moccasin);
   font-family: $font-stack;
 }
