@@ -1,9 +1,9 @@
 
 .card-el {
     perspective: 800px;
-    position: relative;
 }
 .card {
+    position: relative;
     margin : 30px auto auto 50px;
     width: 240px;
     height: 320px;
@@ -17,7 +17,6 @@
     transition: .1s ease;
     border :2px solid silver;
     .card-description{
-        
     }
 }
 .card-wrapper {
@@ -28,13 +27,17 @@
     top:0px;
     transform-style: flat;
 }
-.rate-item {
-    width: 100%;
-    
-}
-.rate-item active {
-    width: 100%;
-    font-weight: bold;
+
+.rate {
+    margin-bottom: 10px;
+    font-weight: 900;
+    &__item {
+        color: yellow;
+        display: inline-block;
+        &_active {
+            color: red;
+        }
+    }
 }
 
 .card-description {
@@ -55,13 +58,15 @@
 .card-description_color-blue {
     color: rgb(96, 149, 228)
 }
-.card-description .title{
+.title{
     font-size: 18px;
     padding-bottom: 7px;
 }
-.card-description .text {
+.text {
     font-size: 12px;
     padding-bottom:10px;
+    padding-top: 5px;
+    font-style: italic;
 }
 button{
     appearance: none;
@@ -85,4 +90,26 @@ button{
 }
 .price_and_buy p {
     padding-right: 5px;
+}
+//////
+.card2 {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 240px;
+    height: 320px;
+    border :2px solid rgba(94, 27, 94, 0.452);
+    border-radius: 15px;
+    transition: 2s ease;
+}
+.card-wrapper2 {
+    background-position: center center;
+    background-size: cover;
+    height: 50%;
+}
+.card-description2 {
+    background: #FFDD73;
+    height:50%;
+    padding: 1rem;
 }

@@ -1,99 +1,47 @@
+
 var cardsElem = document.getElementsByClassName('card'); // выбрал все элементы с классом 'card'.
 console.log('count of cardsElem : ');
 for ( i = 0; i < cardsElem.length; i++ ){
   console.log(cardsElem[i]);
   cardsElem[i].onmouseenter = cardsElem[i].onmouseleave = cardsElem[i].onmousemove = cardsElem[i].onmouseout= handler;
+  //вешаем слушателя на событие мыши чтобы совершать трансформацию при событии.
 }
-
+/**
+ * Хенделр события mouseenter, mousemove, mouseleave
+ * трансформирует элемент
+ * @param {*} event
+ */
 function handler( event ) {
   var type = event.type,
-      targetCoords = this.getBoundingClientRect();// targetCoords.height - высота.
-                                                  // targetCoords.width - ширина.
-
-  if (type === 'mouseout') {
+      targetCoords = this.getBoundingClientRect();
+  /**
+   * когда мышь ушла из блока - возврашщаем в начальное положение
+   */                                                
+  if (type === 'mouseout') { 
     var that = this;
     setTimeout(function () {  
       that.style.transform = "rotateX(0deg)";
-    }, 1200);
+    }, 1200); 
   }
-
-  if (type === 'mousemove') {
-    var posX = event.pageX - targetCoords.x,
+  /*
+  * когда мышь на блоке 
+  * вычисляем позицию мыши, координаты по x и y
+  * генерируем углы трансформаций   
+  */
+  if (type === 'mousemove') { // мышь на карточке 
+    var posX = event.pageX - targetCoords.x, //высчитываем позицию мыши относительно окна браузера.
         posY = event.pageY - targetCoords.y,
-        mouseX = posX > (targetCoords.width / 2) 
-        ? (posX / targetCoords.width) * 30 
-        : (posX - (targetCoords.width / 2)) / (targetCoords.width / 2) * 30,
-        mouseY = posY > (targetCoords.height / 2) 
-        ? (posY / targetCoords.height) * -30 
-        : (posY - (targetCoords.height / 2)) / (targetCoords.height / 2) * -30;
-
-    // var centerX = targetCoords.width / 2;
-    // var centerY = targetCoords.height / 2;
-
-
-
-    // if (posX < centerX) {
-    //   leftSide = true; 
-    // } else {
-    //   rightSide = true;
-    // }
-
-    // if (posY < centerY) {
-    //   topSide = true; 
-    // } else {
-    //   bottomSide = true;
-    // }
-    
-    // console.log(posX > 30 && posX < centerX);
-    // console.log(posX > centerX && posX < (this.offsetWidth - 30));
-    // if (posX < 30 && posX < centerX){   // ( posX > targetCoords.width - 50)
-    //   trDeg = posX;
-    // } else {
-    //     trDeg = 30;
-    //   }
-
-    // if ( posX < this.offsetWidth && posX > (this.offsetWidth - 30)) {
-    //   trDeg = posX;
-    // } else {
-    //   trdeg = 30;
-    // }
-
-    // var horizontalDeg, verticalDeg;
-
-    // if ( leftSide ){
-    //   horizontalDeg = -trDeg;
-    //   // this.style.transform = "rotateY(-"+lTrDeg+"deg)";
-    // }
-    // if ( rightSide){
-    //   horizontalDeg = trDeg;
-    //   // this.style.transform = "rotateY("+rTrDeg+"deg)";
-    // }
-    //     //  для У.
-
-    // console.log(posY > 50 && posY < centerY); // верхний край 
-    // console.log( posY < this.offsetHeigth && posY > (this.offsetHeight - 50));
-    // if (posY < 50 && posY < centerY){   // ( posX > targetCoords.width - 50)
-    //   trDeg = posY;
-    // } else {
-    //     trDeg = 50;
-    //   }
-
-    // if (posY < this.offsetHeigth && posY > (this.offsetHeight - 50)) {
-    //   trDeg = posY;
-    // } else {
-    //   trdeg = 50;
-    // }
-
-    // if ( topSide ){
-    //   verticalDeg = -trDeg;
-    //   // this.style.transform = "rotateX(-"+topTrDeg+"deg)";
-    // }
-    // if ( bottomSide){
-    //   verticalDeg = trDeg;
-    //   // this.style.transform = "rotateX("+bottomTrDeg+"deg)";
-    // }
-    
-    this.style.transform = "rotateY(" + mouseX + "deg) rotateX(" + mouseY + "deg)";
+        mouseX = posX > (targetCoords.width / 2) // генер. угл трансформации по Х
+        ? (posX / targetCoords.width) * 15 
+        : (posX - (targetCoords.width / 2)) / (targetCoords.width / 2) * 15,
+        mouseY = posY > (targetCoords.height / 2)  // генер. угл трансформации по У
+        ? (posY / targetCoords.height) * -15 
+        : (posY - (targetCoords.height / 2)) / (targetCoords.height / 2) * -15;
+    /*
+    * выполняем трансформацию на ранее заданные углы
+    */    
+    this.style.transform = "rotateY(" + mouseX + "deg) rotateX(" + mouseY + "deg)"; // трансформация по х - mouseX
+                                                                                    // трансформация по y - mouseY
     
   }
 }
