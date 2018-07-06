@@ -5,16 +5,17 @@
 }
 .card {
     margin : 30px auto auto 50px;
-    width: 240px;
-    height: 320px;
+    width : 240px;
+    height : 320px;
+    position : relative;
     border :2px solid rgba(94, 27, 94, 0.452);
-    border-radius: 15px;
-    overflow: hidden;
-    transform: none;
-    transition: 2s ease;
+    border-radius : 15px;
+    overflow : hidden;
+    transform : none;
+    transition : 2s ease;
 }
 .card:hover{
-    transition: .1s ease;
+    transition : .1s ease;
     border :2px solid silver;
     .card-description{
         
@@ -73,7 +74,7 @@ button{
     border-radius: 8px; 
     background-color: #fff;
     color: green;
-    font: caption 13px; 
+    font: caption 13px bold; 
 }
 
 .price_and_buy p,button {

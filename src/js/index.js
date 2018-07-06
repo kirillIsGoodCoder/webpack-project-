@@ -21,11 +21,11 @@ function handler( event ) {
     var posX = event.pageX - targetCoords.x,
         posY = event.pageY - targetCoords.y,
         mouseX = posX > (targetCoords.width / 2) 
-        ? (posX / targetCoords.width) * 30 
-        : (posX - (targetCoords.width / 2)) / (targetCoords.width / 2) * 30,
+        ? (posX / targetCoords.width) * 15 
+        : (posX - (targetCoords.width / 2)) / (targetCoords.width / 2) * 15,
         mouseY = posY > (targetCoords.height / 2) 
-        ? (posY / targetCoords.height) * -30 
-        : (posY - (targetCoords.height / 2)) / (targetCoords.height / 2) * -30;
+        ? (posY / targetCoords.height) * -15 
+        : (posY - (targetCoords.height / 2)) / (targetCoords.height / 2) * -15;
 
     // var centerX = targetCoords.width / 2;
     // var centerY = targetCoords.height / 2;
