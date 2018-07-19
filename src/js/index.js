@@ -54,9 +54,11 @@ document.addEventListener("submit", function (evt) {
   var select = form.elements.slct;
   var input = { text: form.elements.text.value, title: form.elements.title.value };
   var container = document.getElementById('card-list');
+  // копирую контейнер.
+  var copyContainer = container.cloneNode(true);
   // console.log("input value is ' "+input.value +" '  select value is "+select.value );
   var elements = [...cardsElem];
-
+  
   // filtered  = elements.sort(function(a, b) {
   //   return Number(a.dataset.price) > Number(b.dataset.price);
   // });

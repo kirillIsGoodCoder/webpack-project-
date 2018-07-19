@@ -32,26 +32,27 @@ module.exports = {
   module: {
     rules: [
     {
-        test: /\.(sass|scss)$/,
-        include: path.resolve(__dirname, 'src/scss'),
-        use: ExtractTextPlugin.extract({
-          use: [{
-                loader: "css-loader",
-                options: {
-                  sourceMap: true,
-                  minimize: true,
-                  url: false
-                }
-              },
-              {
-                loader: "sass-loader",
-                options: {
-                  sourceMap: true
-                }
-              }
-            ]
-          })
-      },
+      test: /\.(sass|scss)$/,
+      include: path.resolve(__dirname, 'src/scss'),
+      use: ExtractTextPlugin.extract({
+        use: [
+          {
+            loader: "css-loader",
+            options: {
+              sourceMap: true,
+              minimize: true,
+              url: false
+            }
+          },
+          {
+            loader: "sass-loader",
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
+      })
+    },
       {
         test: /\.html$/,
         include: [
