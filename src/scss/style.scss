@@ -4,7 +4,6 @@ $font-stack: -apple-system, BlinkMacSystemFont,Roboto,'Open Sans','Helvetica Neu
 @import "./font-awesome/fa-solid";
 @import "./font-awesome/fa-regular";
 @import "./font-awesome/fontawesome";
-@import "card";
 
 // Basic reset
 * {
@@ -17,8 +16,12 @@ html, body {
   height: 100%;
 }
 
+@import "blog-el";
+@import "card";
+@import "search-form";
+
 body {
-  background: #fff !important;
-  background-image: linear-gradient( to left top,red, moccasin);
+  background: rgba(109, 121, 201, 0.17)!important;
+  // background-image: linear-gradient( to left top,red, moccasin);
   font-family: $font-stack;
 }

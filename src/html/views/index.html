@@ -1,24 +1,129 @@
 <%= _.template(require('./../includes/head.html'))() %>
 <% var pageData = [
   {
-    imgUrl: '',
-    title: 'Название товара',
-    price: 5000,
-    oldPrice: 10000
+    imgUrl: './img/font1.jpg',
+    title: 'Темные ночи',
+    text: 'Ночная экскурсия по тайскому селу и шведский стол.',
+    rate: 5,
+    price: 6400,
+    oldPrice: 9000
   },
   {
-    imgUrl: '',
-    title: 'Название товара',
-    price: 5000,
+    imgUrl: './img/1.png',
+    title: 'Яблоня садовая',
+    text: 'Саженец яблони 4 года.',
+    rate: 4,
+    price: 4000,
+    oldPrice: null
+  },
+  {
+    imgUrl: './img/font3.jpg',
+    title: 'Белые ночи',
+    text: '<b>Обзорная экскурсия</b> по ночному городу и незабываемое знакомство с <del>культурными</del> бомжами.',
+    rate: 5,
+    price: 7000,
+    oldPrice: null
+  },
+  {
+    imgUrl: './img/font1.jpg',
+    title: 'Темные ночи',
+    text: 'Ночная экскурсия по тайскому селу и шведский стол.',
+    rate: 5,
+    price: 5400,
+    oldPrice: 9000
+  },
+  {
+    imgUrl: './img/1.png',
+    title: 'Яблоня садовая',
+    text: 'Саженец яблони 4 года.',
+    rate: 4,
+    price: 4000,
+    oldPrice: null
+  },
+  {
+    imgUrl: './img/font3.jpg',
+    title: 'Белые ночи',
+    text: '<b>Обзорная экскурсия</b> по ночному городу и незабываемое знакомство с <del>культурными</del> бомжами.',
+    rate: 5,
+    price: 7000,
     oldPrice: null
   }
 ]; %>
+<!-- поиск и фильтры. -->
+<%= _.template(require('./../components/search-form.html'))() %>
+<!-- <div class="container">
+  <div class="nav">
+    <div class="row">
+      <div class="col-md-4"><input type="text" class="nav__input" placeholder="Название товара"></div>
+      <div class="col-md-4"><select class="nav__select" name="slct" id="">
+          <option>цена по возр.</option>
+          <option>цена по убыв.</option>
+          <option>рейтинг по возр.</option>
+          <option>рейтинг по убыв.</option>
+      </select></div>
+      <div class="col-md-2"><button class="nav__button">Найти</button></div>
+    </div>
+  </div>
+</div>    -->
+ <!-- <div class="wrapper">
+      <nav>
+        
+        <form>
+          <input type="text" name="search" autocomplete="on" placeholder="Название товара" class='col'>
+          <select name="slct" class='col'>
+            <option>цена по возр.</option>
+            <option>цена по убыв.</option>
+            <option>рейтинг по возр.</option>
+            <option>рейтинг по убыв.</option>
+          </select>
+          <button class='col'>Найти</button>
+        </form>
+      </nav>
+    </div> -->
+
+<!-- end -->
+<!-- стили -->
+<style>
+
+/* .wrapper {
+  margin: 20px 30px;
+}
+form {
+  outline:0;
+  box-shadow:0;
+  border:0px;
+  
+  width: 700px;
+  height: 180px;
+  background:#fefeab;
+}
+input[type="text"],
+select{
+  height:40px;
+  font-size: 20px;
+  text-align:center;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+button{
+  background-image:linear-gradient();
+  height:40px;
+  font-size: 20px;
+  color:#797;
+  width: 120px;
+  border-radius: none;
+}
+ */
+</style>
+<!-- конец -->
+
 <div class="container">
-  <div class="row">
+  <div class="row" id="card-list">
     <% pageData.forEach(function(page) { %>
       <%= _.template(require('./../components/card.html'))(page) %>
     <% }); %>
   </div>
 </div>
 
-<%= _.template(require('./../includes/footer.html'))() %>
+<%= _.template(require('./../includes/footer.html'))() %> 
+

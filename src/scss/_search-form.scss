@@ -1,0 +1,133 @@
+.wrapper {
+  margin: 20px 30px;
+}
+.nav__input,
+.nav__select{
+  outline: none; 
+  height:40px;
+  font-size: 20px;
+  // text-align:center;
+  border: 2px solid #000;
+  border-radius: 5px;
+}
+
+.nav__input {
+  margin-left: 10px;
+  width: 100%;
+  background: #2c3e50;
+  text-align: left;
+  padding-left: 10px;
+  color: antiquewhite;
+
+  &::-webkit-input-placeholder {
+    color: silver;
+  }
+  &:moz-placeholder {
+    color: silver;
+  }
+  &::moz-placeholder {
+    color: silver;
+  }
+  &:ms-input-placeholder {
+    color: silver;
+  }
+  &:focus {
+    &::-webkit-input-placeholder {
+      color: transparent;
+    }
+    &:moz-placeholder {
+      color: transparent;
+    }
+    &::moz-placeholder {
+      color: transparent;
+    }
+    &:ms-input-placeholder {
+      color: transparent;
+    }
+  }
+}
+
+.nav__button{
+  background-image:linear-gradient();
+  border-radius: 5px;
+  background: #30502c;
+  height:40px;
+  font-size: 20px;
+  color:#797;
+  width: 120px;
+  border: 1px solid #000;
+
+}
+.nav__button:hover {
+  background-image: linear-gradient(to left bottom, darkblue, red);
+  
+}
+
+.nav {
+  margin-bottom: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  border: 1px solid purple;
+  // background-image: linear-gradient(to left bottom, red, darkblue); 
+  background: rgba(104, 55, 166, 0.48);
+}
+
+select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  outline: 0;
+  text-align: center;
+  box-shadow: none;
+  // align-content: center;
+  border: 0 !important;
+  background: #2c3e50;
+  background-image: none;
+  font-family: $font-stack;
+  font-size: 20px;
+}
+.nav__select {
+  position: relative;
+  display: block;
+  height: 40px;
+  // line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius:5px;
+}
+select {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 0 0 .5em;
+  color: silver;
+  cursor: pointer;
+}
+select::-ms-expand {
+  display: none;
+}
+/* Arrow */
+.nav__select::after {
+  content: '\25BC';
+  position: absolute;
+  line-height: 40px;
+  font-size: 16px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0 1em;
+  background: #34495e;
+  pointer-events: none;
+}
+/* Transition */
+.nav__select:hover::after {
+  color: #9AB999;
+}
+select::after {
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}

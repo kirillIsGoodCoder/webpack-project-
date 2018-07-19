@@ -1,0 +1,132 @@
+.article {
+  position: relative;
+  width: auto;
+  height: 420px;
+  border: 2px solid silver;
+  border-radius: 20px;
+  margin: 50px auto;
+  padding: 30px;
+  background: #000000;
+  overflow: hidden;
+
+  &__img {
+    background: center no-repeat;
+    background-size: cover;
+
+    position: absolute;
+    transition: background-size, .5s ease;
+    border-radius: 20px;
+    opacity: 0.6;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+  &__preview {
+    margin:7px auto auto 50px;
+  }
+
+  &__info {
+    color: azure;
+    margin-bottom :20px;
+    padding:5px 7px;
+  }
+
+  &__tag {
+    font-size: 2rem;
+  }
+
+  &__date {
+    margin-left: 30px;
+    font-size: 16px;
+  }
+
+  &__topic {
+    perspective: 500px;
+    position: absolute;
+    color: aliceblue;
+    top: 100px;
+  }
+
+  &__title {
+    padding-bottom: 30px;
+  }
+
+  &__description {
+    border-radius: 3px;
+    transition: all, .3s ease;
+    transform: translateY(.75em);
+    // transform: rotateY(-90deg);
+    opacity: 0;
+    transform-origin: center top;
+    margin-right: 35px;
+    padding: 8px;
+    //  Колдую с BG.
+    background-color: rgba(25, 25, 112, .3);
+    transition: background-color, 2.2s ease;
+    transition-delay: 1.2s;
+  }
+
+  // новая анимация
+  &::after,
+  &::before {
+    border-color: greenyellow;
+    transition: all 600ms;
+    border-style: solid;
+    border-width: 0;
+    height: 1.5em;
+    position: absolute;
+    width: 1.5em;
+    opacity: 0;
+  }
+  &::before {
+    content: '';
+    border-bottom-width: .125em;
+    border-left-width: .125em;
+    bottom: 22px;
+    left: 22px;
+  }
+  &::after {
+    content: '';
+    border-right-width: .125em;
+    border-top-width: .125em;
+    right: 22px;
+    top: 22px;
+  }
+  &:hover {
+    &:before,
+    &:after {
+      width: 14.1em;
+      height: 10.2em;
+      opacity: 1;
+    }
+    .article__description {
+      opacity: 1;
+      transform: translateY(0em);
+      background: rgba(25, 25, 112, 1);
+    } 
+    .article__img {
+      transform: scale(1.01);
+    }
+  }
+}
+  
+  // &:hover .article__description {
+  //   opacity: 1;
+  //   transform: translateY(0em);
+  // }
+  // &:hover {
+  //   .article__img {
+  //     background-size: 110% auto;
+  //   }
+  // }
+  // конец анимации
+
+// .article:hover {
+//   .article__description {
+//     opacity: .8;
+//     max-height: 500px;
+//     // transform: rotateY(0);
+//   }
+// }

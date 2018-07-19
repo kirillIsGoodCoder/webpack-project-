@@ -1,12 +1,13 @@
 
 .card-el {
     perspective: 800px;
+    padding-bottom: 16px;
+    height: 100%;
 }
 .card {
     position: relative;
-    margin : 30px auto auto 50px;
-    width : 240px;
-    height : 320px;
+    width : 100%;
+    height: 100%;
     position : relative;
     border :2px solid rgba(94, 27, 94, 0.452);
     border-radius : 15px;
@@ -20,15 +21,6 @@
     .card-description{
     }
 }
-.card-wrapper {
-    height: 50%;
-    background-position: center center;
-    background-size: cover;
-    position: relative;
-    top:0px;
-    transform-style: flat;
-}
-
 .rate {
     margin-bottom: 10px;
     font-weight: 900;
@@ -41,18 +33,7 @@
     }
 }
 
-.card-description {
-    position: absolute;
-    left: 0px;
-    top: 50%;
-    bottom: 0;
-    width: 100%;
-    padding-top: 10px;
-    padding-left: 15px;
-    background: #FFDD73;
-    // transition: transform, 0.5s ease;
-    // transform:translateY(100%);
-}
+
 .card-description_color-brown {
     color:rgb(139, 36, 13);
 }
@@ -71,15 +52,17 @@
 }
 button{
     appearance: none;
-    outline: none;
+    outline: 0;
     box-shadow: none; 
     margin-left: 10px;
     min-height:20px;
     padding: 5px 10px;
     border-radius: 8px; 
+    border: 2px solid blue;
     background-color: #fff;
     color: green;
-    font: caption 13px bold; 
+    font : caption 15px bolder; 
+    font-weight: bolder;
 }
 
 .price_and_buy p,button {
@@ -98,7 +81,7 @@ button{
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: space-around;
-    width: 240px;
+    width: 100%;
     height: 320px;
     border :2px solid rgba(94, 27, 94, 0.452);
     border-radius: 15px;
@@ -107,10 +90,10 @@ button{
 .card-wrapper2 {
     background-position: center center;
     background-size: cover;
-    height: 50%;
+    height: 200px;
 }
 .card-description2 {
     background: #FFDD73;
-    height:50%;
+    height:100%;
     padding: 1rem;
 }

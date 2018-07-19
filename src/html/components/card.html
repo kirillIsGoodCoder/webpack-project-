@@ -1,73 +1,33 @@
 
-<!-- <div class="card-el">
-	<div class="card">
-		<div class="card-wrapper" style="background-image: url(./img/font1.jpg);">
-			<div class="card-description card-description_color-brown">
-				<p class="title">Card</p>
-				<p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
-			</div>
-		</div>
-	</div>
-</div> -->
-<div class="card-el">
-		<div class="card">
-			<div class="card-wrapper" style="background-image: url(./img/font1.jpg);"></div>
-			<div class="card-description card-description_color-brown">
-				<p class="title">Темные ночи</p>
-				<div class="rate">
-					<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-					<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-					<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-					<div class="rate__item"><i class="fas fa-star"></i></div>
-					<div class="rate__item"><i class="fas fa-star"></i></div>
+<div class="col-lg-3 col-md-4">
+	<div class="card-el">
+			<div class="card"
+				data-title="<%= title %>" 
+				data-rate="<%= rate %>"
+				data-oldPrice="<%= oldPrice %>"
+				data-price="<%= price %>"
+				data-text="<%= text %>"
+			>
+				<div class="card-wrapper2"  style="background-image: url(<%= imgUrl %>);"></div>
+				<div class="card-description2 card-description_color-brown">
+					<p class="title" data-title="<%= title %>"> <%= title %></p>
+					<div class="rate" >
+						<% for ( var i = 0; i<5; i++ ) { %>
+							<% if (i < rate) { %>
+								<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
+							<% } else { %>
+								<div class="rate__item"><i class="fas fa-star"></i></div>
+							<% } %>	
+						<% } %>
+					</div>
+					<div class="price_and_buy">
+							<% if(oldPrice) { %>
+								<p class="del"><%= oldPrice %>&#8381;</p>
+							<% } %><p><%= price %>  &#8381;</p>
+						<button>Купить</button>
+					</div>
+					<p class="text" ><%= text %></p>
 				</div>
-				<div class="price_and_buy">
-						<% if(oldPrice) { %><p class="del"><%= oldPrice %>&#8381;</p><% } %><p> 6400 &#8381;</p>
-					<button>Купить</button>
-				</div>
-				<p class="text">Ночная экскурсия по тайскому селу и шведский стол.</p>
 			</div>
 		</div>
-	</div>
-	
-<div class="card-el">
-	<div class="card card2">
-		<div class="card-wrapper2" style="background-image: url(./img/1.png);"></div>
-		<div class="card-description2 card-description_color-brown">
-			<p class="title">Яблоня садовая</p>
-			<div class="rate">
-				<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-				<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-				<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-				<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-				<div class="rate__item "><i class="fas fa-star"></i></div>
-			</div>
-			<div class="price_and_buy">
-				<p>4000 &#8381;</p>
-				<button>Купить</button>
-			</div>
-			<p class="text">Саженец яблони 4 года.</p>
-		</div>
-	</div>
-</div>
-
-<div class="card-el">
-	<div class="card">
-		<div class="card-wrapper" style="background-image: url(./img/font3.jpg);"></div>
-		<div class="card-description card-description_color-brown">
-			<p class="title">Белые ночи</p>
-			<div class="rate">
-				<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-				<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-				<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-				<div class="rate__item rate__item_active"><i class="fas fa-star"></i></div>
-				<div class="rate__item"><i class="fas fa-star"></i></div>
-			</div>
-			<div class="price_and_buy">
-				<p>7000 &#8381;</p>
-				<button>Купить</button>
-			</div>
-			<p class="text"><b>Обзорная экскурсия</b> по ночному городу и незабываемое знакомство с <del>культурными</del> бомжами.</p>
-		</div>
-	</div>
 </div>

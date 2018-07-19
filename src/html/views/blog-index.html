@@ -1,0 +1,54 @@
+<%= _.template(require('./../includes/head.html'))() %>
+<% var blogPosts = [
+  {
+    wrapperClass: 'col-lg-6',
+    imgUrl : 'https://wylsa.com/wp-content/uploads/2018/06/P1088093.jpg',
+    tag: 'Обзор',
+    date: '11-07-2018' , 
+    title: 'Обзор OnePlus 6: творческий кризис',
+    description: 'Пожалуй, ни один из флагманов этого года не собирал столько критики, как OnePlus 6. Фанаты марки встретили его прохладно: дизайн не блещет оригинальностью, характеристики без изюминки,а цена опять выросла. Раньше всё было наоборот: устройства делали по «народным заявкам», учитывая пожелания гиков.'
+  },
+  {
+    wrapperClass: 'col-lg-6',
+    imgUrl : 'https://st.kp.yandex.net/images/film/339173.jpg',
+    tag: 'Фильм',
+    date: '01-03-2004' , 
+    title: 'Мертвые обезьяны',
+    description: 'Триллер в котором много кровавых сцен',
+  },
+  {
+    wrapperClass: 'col-lg-4  col-sm-4',
+    imgUrl : 'https://wylsa.com/wp-content/uploads/2018/06/DSC07990-2.jpg',
+    tag: 'Аудио, Обзоры',
+    date: '27-06-18' , 
+    title: 'Обзор JBL Go 2: го куда-нибудь',
+    description: 'Если вспомнить первый JBL Go, то это была колонка базового-базового-базового уровня, подарок для тех, кто хотел купить сверх дешевое аудиоустройство не на «али», а в магазине по соседству.',
+  },
+  {
+    wrapperClass: 'col-lg-4  col-sm-4',
+    imgUrl : 'https://wylsa.com/wp-content/uploads/2018/06/xiaomi-redmi-note-5.jpg',
+    tag: 'Обзоры',
+    date: '5 июня' , 
+    title: 'Обзор Xiaomi Redmi Note 5: лучший в классе',
+    description: 'Китайские бренды захватили рынок дешёвых смартфонов. Xiaomi, Meizu, Honor — эти марки чуть ли не каждый месяц показывают интересные новинки. Сегодня поговорим о Xiaomi Redmi Note 5. Его анонсировали ещё в феврале этого года, теперь руки дошли и до обзора, посмотрим на него поближе.',
+  },
+  {
+    wrapperClass: 'col-lg-4 col-sm-4',
+    imgUrl : 'https://wylsa.com/wp-content/uploads/2018/06/DSC07904-2.jpg',
+    tag: 'Аудио, Обзоры',
+    date: '19 июня' , 
+    title: 'Обзор акустической системы Denon Envaya DSB-250BT',
+    description: 'Когда-то давно я подробно расписывал про устройство всё-всё-всё, тут такая кнопочка, тут такой вот вырез, сейчас в этом немного смысла, поскольку потребительская электроника (и портативное аудио в том числе) превратилась из праздника в будни.',
+  }
+]
+%>
+
+<div class="container">
+  <div class="row">
+    <% blogPosts.forEach(function(post) { %>
+      <%= _.template(require('./../components/blog-el.html'))(post) %>
+    <% }); %>
+  </div>
+</div>
+
+<%= _.template(require('./../includes/footer.html'))() %> 
